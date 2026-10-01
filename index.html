@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSFiddle h2ufo8x4</title>
+
+  <style>
+    
+  </style>
+
+  
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Pessoas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #164e63;
+            margin-bottom: 25px;
+        }
+
+        .formulario {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+            margin-bottom: 25px;
+        }
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+            color: #334155;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0891b2;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: #0891b2;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0e7490;
+        }
+
+        .lista {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+        }
+
+        .lista h2 {
+            color: #164e63;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background: #164e63;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📋 Cadastro de Pessoas</h1>
+
+    <div class="formulario">
+
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite o nome completo">
+        </div>
+
+        <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input
+                type="tel"
+                id="telefone"
+                placeholder="(61) 99999-9999">
+        </div>
+
+        <div class="campo">
+            <label for="endereco">Endereço</label>
+            <textarea
+                id="endereco"
+                placeholder="Digite o endereço completo"></textarea>
+        </div>
+
+        <button onclick="cadastrar()">
+            Cadastrar Pessoa
+        </button>
+
+    </div>
+
+    <div class="lista">
+
+        <h2>Pessoas cadastradas</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabelaPessoas">
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+function cadastrar() {
+
+    let nome = document.getElementById("nome").value;
+    let telefone = document.getElementById("telefone").value;
+    let endereco = document.getElementById("endereco").value;
+
+    if (nome === "" || telefone === "" || endereco === "") {
+
+        alert("Preencha todos os campos!");
+
+        return;
+    }
+
+    let tabela = document.getElementById("tabelaPessoas");
+
+    let linha = tabela.insertRow();
+
+    let colunaNome = linha.insertCell(0);
+    let colunaTelefone = linha.insertCell(1);
+    let colunaEndereco = linha.insertCell(2);
+
+    colunaNome.innerHTML = nome;
+    colunaTelefone.innerHTML = telefone;
+    colunaEndereco.innerHTML = endereco;
+
+    document.getElementById("nome").value = "";
+    document.getElementById("telefone").value = "";
+    document.getElementById("endereco").value = "";
+
+    alert("Pessoa cadastrada com sucesso!");
+
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+  <script>
+    
+  </script>
+</body>
+</html>
